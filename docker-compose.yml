@@ -6,3 +6,24 @@ services:
     build:
       context: .
       dockerfile: DIAssignment.FileHandler/Dockerfile
+
+  diassignment.esentrypoint:
+    image: ${DOCKER_REGISTRY-}diassignmentesentrypoint
+    build:
+      context: .
+      dockerfile: DIAssignment.ESEntryPoint/Dockerfile
+
+
+  diassignment.eventstore:
+    image: ${DOCKER_REGISTRY-}diassignmenteventstore
+    build:
+      context: .
+      dockerfile: DIAssignment.EventStore/Dockerfile
+
+
+  diassignment.projection:
+    image: ${DOCKER_REGISTRY-}diassignmentprojection
+    build:
+      context: .
+      dockerfile: DIAssignment.Projection/Dockerfile
+
