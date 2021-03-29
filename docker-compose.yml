@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  diassignment.filehandler:
+    image: ${DOCKER_REGISTRY-}diassignmentfilehandler
+    build:
+      context: .
+      dockerfile: DIAssignment.FileHandler/Dockerfile

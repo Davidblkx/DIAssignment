@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "DIAssignment.Projection": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

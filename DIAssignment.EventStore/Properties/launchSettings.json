@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "DIAssignment.EventStore": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
