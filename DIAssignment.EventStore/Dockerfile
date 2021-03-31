@@ -14,7 +14,6 @@ RUN dotnet build "DIAssignment.EventStore.csproj" -c Release -o /app/build
 FROM build AS publish
 RUN dotnet publish "DIAssignment.EventStore.csproj" -c Release -o /app/publish
 
-FROM base AS final
-WORKDIR /app
+FROM dpires/base AS final
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "DIAssignment.EventStore.dll"]
+CMD ["dotnet", "DIAssignment.EventStore.dll"]

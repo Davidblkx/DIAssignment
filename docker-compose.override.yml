@@ -1,12 +1,2 @@
 version: '3.4'
-services:
-  diassignment.filehandler:
-
-  diassignment.esentrypoint:
-
-
-  diassignment.eventstore:
-
-
-  diassignment.projection:
 

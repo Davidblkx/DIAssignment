@@ -14,7 +14,6 @@ RUN dotnet build "DIAssignment.FileHandler.csproj" -c Release -o /app/build
 FROM build AS publish
 RUN dotnet publish "DIAssignment.FileHandler.csproj" -c Release -o /app/publish
 
-FROM base AS final
-WORKDIR /app
+FROM dpires/base AS final
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "DIAssignment.FileHandler.dll"]
+CMD ["dotnet", "DIAssignment.FileHandler.dll"]

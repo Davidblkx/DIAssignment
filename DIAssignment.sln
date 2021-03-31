@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31025.194
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DIAssignment.FileHandler", "DIAssignment.FileHandler\DIAssignment.FileHandler.csproj", "{1F35F24D-1B5A-49B2-A5A6-AF1CEBA23403}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DIAssignment.FileHandler", "DIAssignment.FileHandler\DIAssignment.FileHandler.csproj", "{1F35F24D-1B5A-49B2-A5A6-AF1CEBA23403}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{F7E547DA-9981-4B00-9D35-5363187A7CB3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DIAssignment.EventStore", "DIAssignment.EventStore\DIAssignment.EventStore.csproj", "{1679FD93-14A9-453B-84D6-62B598B8B720}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DIAssignment.EventStore", "DIAssignment.EventStore\DIAssignment.EventStore.csproj", "{1679FD93-14A9-453B-84D6-62B598B8B720}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DIAssignment.Projection", "DIAssignment.Projection\DIAssignment.Projection.csproj", "{CF414968-2F9C-4527-8C50-AAA9D00EA578}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DIAssignment.Projection", "DIAssignment.Projection\DIAssignment.Projection.csproj", "{CF414968-2F9C-4527-8C50-AAA9D00EA578}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DIAssignment.ESEntryPoint", "DIAssignment.ESEntryPoint\DIAssignment.ESEntryPoint.csproj", "{FC136FA3-F337-458C-9F18-14BB8A00E14F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DIAssignment.ESEntryPoint", "DIAssignment.ESEntryPoint\DIAssignment.ESEntryPoint.csproj", "{FC136FA3-F337-458C-9F18-14BB8A00E14F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DIAssignment.Core", "DIAssignment.Core\DIAssignment.Core.csproj", "{6ECCF1CA-1CDC-4328-8E8B-0920B48522CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DIAssignment.Core", "DIAssignment.Core\DIAssignment.Core.csproj", "{6ECCF1CA-1CDC-4328-8E8B-0920B48522CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

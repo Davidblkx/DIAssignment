@@ -1,8 +1,4 @@
 #See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
-
-FROM mcr.microsoft.com/dotnet/runtime:5.0 AS base
-WORKDIR /app
-
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
 COPY ["DIAssignment.Projection/DIAssignment.Projection.csproj", "DIAssignment.Projection/"]
@@ -14,7 +10,6 @@ RUN dotnet build "DIAssignment.Projection.csproj" -c Release -o /app/build
 FROM build AS publish
 RUN dotnet publish "DIAssignment.Projection.csproj" -c Release -o /app/publish
 
-FROM base AS final
-WORKDIR /app
+FROM dpires/base AS final
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "DIAssignment.Projection.dll"]
+CMD ["dotnet", "DIAssignment.Projection.dll"]
