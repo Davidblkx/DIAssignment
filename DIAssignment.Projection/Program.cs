@@ -1,12 +1,10 @@
-﻿using System;
-
-namespace DIAssignment.Projection
+﻿namespace DIAssignment.Projection
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello World!");
+            ProjectionService.Start().WaitForExit();
         }
     }
 }

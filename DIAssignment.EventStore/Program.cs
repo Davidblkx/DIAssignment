@@ -1,12 +1,10 @@
-﻿using System;
-
-namespace DIAssignment.EventStore
+﻿namespace DIAssignment.EventStore
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello World!");
+            EventStoreService.Start().WaitForExit();
         }
     }
 }

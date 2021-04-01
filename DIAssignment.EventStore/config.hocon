@@ -1,0 +1,19 @@
+﻿akka {
+	actor {
+		provider = cluster
+	}
+            
+	remote {
+		dot-netty.tcp {
+			hostname = "127.0.0.1"
+			port = 0
+			maximum-frame-size = 256000b
+		}
+	}            
+
+	cluster {
+		#will inject this node as a self-seed node at run-time
+		seed-nodes = ["akka.tcp:dia//dia@localhost:4053"]
+		roles = [eventstore]
+	}
+}

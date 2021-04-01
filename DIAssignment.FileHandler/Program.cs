@@ -1,12 +1,12 @@
-﻿using System;
-
-namespace DIAssignment.FileHandler
+﻿namespace DIAssignment.FileHandler
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello World!");
+            FileHandlerService
+                .Start()
+                .WaitForExit();
         }
     }
 }

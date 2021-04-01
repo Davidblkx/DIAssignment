@@ -7,10 +7,10 @@ services:
       - '9110:9110'
       - '4053:4053'
     environment:
-      ACTORSYSTEM: "webcrawler"
+      ACTORSYSTEM: "dia"
       CLUSTER_IP: lighthouse
       CLUSTER_PORT: 4053
-      CLUSTER_SEEDS: "akka.tcp://webcrawler@lighthouse:4053"
+      CLUSTER_SEEDS: "akka.tcp://dia@lighthouse:4053"
 
   filehandler:
     image: dpires/filehandler
@@ -18,7 +18,7 @@ services:
       context: .
       dockerfile: DIAssignment.FileHandler/Dockerfile
     environment:
-      CLUSTER_SEEDS: "akka.tcp://webcrawler@lighthouse:4053"
+      CLUSTER_SEEDS: "akka.tcp://dia@lighthouse:4053"
       CLUSTER_IP: filehandler
       CLUSTER_PORT: 0
     depends_on:
@@ -30,7 +30,7 @@ services:
       context: .
       dockerfile: DIAssignment.ESEntryPoint/Dockerfile
     environment:
-      CLUSTER_SEEDS: "akka.tcp://webcrawler@lighthouse:4053"
+      CLUSTER_SEEDS: "akka.tcp://dia@lighthouse:4053"
       CLUSTER_IP: esentrypoint
       CLUSTER_PORT: 0
     depends_on:
@@ -43,7 +43,7 @@ services:
       context: .
       dockerfile: DIAssignment.EventStore/Dockerfile
     environment:
-      CLUSTER_SEEDS: "akka.tcp://webcrawler@lighthouse:4053"
+      CLUSTER_SEEDS: "akka.tcp://dia@lighthouse:4053"
       CLUSTER_IP: eventstore
       CLUSTER_PORT: 0
     depends_on:
@@ -56,7 +56,7 @@ services:
       context: .
       dockerfile: DIAssignment.Projection/Dockerfile
     environment:
-      CLUSTER_SEEDS: "akka.tcp://webcrawler@lighthouse:4053"
+      CLUSTER_SEEDS: "akka.tcp://dia@lighthouse:4053"
       CLUSTER_IP: projection
       CLUSTER_PORT: 0
     depends_on:

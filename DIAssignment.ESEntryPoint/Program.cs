@@ -1,12 +1,10 @@
-﻿using System;
-
-namespace DIAssignment.ESEntryPoint
+﻿namespace DIAssignment.ESEntryPoint
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello World!");
+            ESEntryPointService.Start().WaitForExit();
         }
     }
 }

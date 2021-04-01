@@ -5,7 +5,7 @@ WORKDIR /app
 ENV CLUSTER_SEEDS "[]"
 ENV CLUSTER_IP ""
 ENV CLUSTER_PORT "5213"
-ENV ACTOR_SYSTEM_NAME "DIA"
+ENV ACTORSYSTEM "dia"
 
 # Akka.Remote inbound listening endpoint
 EXPOSE 5213
