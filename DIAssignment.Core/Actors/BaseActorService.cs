@@ -1,6 +1,7 @@
 ﻿using Akka.Actor;
 using Akka.Bootstrap.Docker;
 using Akka.Configuration;
+using Akka.Routing;
 using System;
 using System.IO;
 using System.Threading.Tasks;
@@ -21,12 +22,15 @@ namespace DIAssignment.Core.Actors
 
         public BaseActorService(string configPath = CONFIG_NAME)
         {
+            var configContent = File.ReadAllText(configPath);
+
             // Load config file
             var config = ConfigurationFactory
-                .ParseString(File.ReadAllText(configPath));
+                .ParseString(configContent);
             // Start actor system
             ActorSystem = ActorSystem.Create(
                 ACTOR_SYSTEM_NAME, config.BootstrapFromDocker());
+
             OnStart();
         }
 

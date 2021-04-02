@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DIAssignment.ESEntryPoint",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DIAssignment.Core", "DIAssignment.Core\DIAssignment.Core.csproj", "{6ECCF1CA-1CDC-4328-8E8B-0920B48522CB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DIAssignment.Tests", "DIAssignment.Tests\DIAssignment.Tests.csproj", "{21C27D66-A8BD-4D0F-ADD9-8F99A57CD4D5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -97,6 +99,18 @@ Global
 		{6ECCF1CA-1CDC-4328-8E8B-0920B48522CB}.Release|x64.Build.0 = Release|Any CPU
 		{6ECCF1CA-1CDC-4328-8E8B-0920B48522CB}.Release|x86.ActiveCfg = Release|Any CPU
 		{6ECCF1CA-1CDC-4328-8E8B-0920B48522CB}.Release|x86.Build.0 = Release|Any CPU
+		{21C27D66-A8BD-4D0F-ADD9-8F99A57CD4D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21C27D66-A8BD-4D0F-ADD9-8F99A57CD4D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21C27D66-A8BD-4D0F-ADD9-8F99A57CD4D5}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{21C27D66-A8BD-4D0F-ADD9-8F99A57CD4D5}.Debug|x64.Build.0 = Debug|Any CPU
+		{21C27D66-A8BD-4D0F-ADD9-8F99A57CD4D5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{21C27D66-A8BD-4D0F-ADD9-8F99A57CD4D5}.Debug|x86.Build.0 = Debug|Any CPU
+		{21C27D66-A8BD-4D0F-ADD9-8F99A57CD4D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21C27D66-A8BD-4D0F-ADD9-8F99A57CD4D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21C27D66-A8BD-4D0F-ADD9-8F99A57CD4D5}.Release|x64.ActiveCfg = Release|Any CPU
+		{21C27D66-A8BD-4D0F-ADD9-8F99A57CD4D5}.Release|x64.Build.0 = Release|Any CPU
+		{21C27D66-A8BD-4D0F-ADD9-8F99A57CD4D5}.Release|x86.ActiveCfg = Release|Any CPU
+		{21C27D66-A8BD-4D0F-ADD9-8F99A57CD4D5}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

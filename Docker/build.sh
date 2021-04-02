@@ -4,6 +4,6 @@ CURRENT=$PWD
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 cd $DIR
 
-docker build -t dpires/base .
+docker build -t dpires/base -f ./Dockerfile ..
 
 cd $CURRENT

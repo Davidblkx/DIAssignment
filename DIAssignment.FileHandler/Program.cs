@@ -1,4 +1,4 @@
-﻿namespace DIAssignment.FileHandler
+﻿namespace DIAssignment.Core
 {
     class Program
     {

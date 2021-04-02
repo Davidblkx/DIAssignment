@@ -1,6 +1,8 @@
 FROM mcr.microsoft.com/dotnet/runtime:5.0 AS base
 WORKDIR /app
 
+COPY config.json /app/config.json
+
 # Default env variables
 ENV CLUSTER_SEEDS "[]"
 ENV CLUSTER_IP ""
@@ -11,7 +13,7 @@ ENV ACTORSYSTEM "dia"
 EXPOSE 5213
 
 # Copy entrypoint script
-COPY /entry.sh /entry.sh
+COPY Docker/entry.sh /entry.sh
 RUN chmod +x /entry.sh
 
 ENTRYPOINT ["/bin/bash","/entry.sh"]

@@ -14,6 +14,6 @@
 	cluster {
 		#will inject this node as a self-seed node at run-time
 		seed-nodes = ["akka.tcp:dia//dia@localhost:4053"]
-		roles = [eventstore]
+		roles = ["eventstore"]
 	}
 }

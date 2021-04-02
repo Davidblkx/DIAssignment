@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\artist_collection" />
+    <None Remove="Assets\file.zip" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\artist_collection">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\file.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.collector" Version="1.3.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DIAssignment.Core\DIAssignment.Core.csproj" />
+    <ProjectReference Include="..\DIAssignment.ESEntryPoint\DIAssignment.ESEntryPoint.csproj" />
+    <ProjectReference Include="..\DIAssignment.EventStore\DIAssignment.EventStore.csproj" />
+    <ProjectReference Include="..\DIAssignment.FileHandler\DIAssignment.FileHandler.csproj" />
+    <ProjectReference Include="..\DIAssignment.Projection\DIAssignment.Projection.csproj" />
+  </ItemGroup>
+
+</Project>

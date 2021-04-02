@@ -1,6 +1,17 @@
 ﻿akka {
 	actor {
 		provider = cluster
+		deployment {
+			"/fileimport" {
+				router = round-robin-pool
+				nr-of-instances = 5
+				cluster {
+					enabled = on
+					allow-local-routees = on
+					use-role = filehandler
+				}
+			}
+		}
 	}
             
 	remote {
@@ -12,8 +23,8 @@
 	}            
 
 	cluster {
-		#will inject this node as a self-seed node at run-time
+		# will inject this node as a self-seed node at run-time
 		seed-nodes = ["akka.tcp:dia//dia@localhost:4053"]
-		roles = [filehandler]
+		roles = ["filehandler"]
 	}
 }
