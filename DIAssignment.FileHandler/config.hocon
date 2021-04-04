@@ -1,17 +1,6 @@
 ﻿akka {
 	actor {
 		provider = cluster
-		deployment {
-			"/fileimport" {
-				router = round-robin-pool
-				nr-of-instances = 5
-				cluster {
-					enabled = on
-					allow-local-routees = on
-					use-role = filehandler
-				}
-			}
-		}
 	}
             
 	remote {

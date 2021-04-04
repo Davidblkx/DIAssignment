@@ -1,4 +1,6 @@
-﻿namespace DIAssignment.Core.Models
+﻿using DIAssignment.Core.Models.Entity;
+
+namespace DIAssignment.Core.Models
 {
     public enum ImportEntityType
     {
@@ -15,9 +17,6 @@
         public const string COLLECTION_MATCH = "collection_match";
         public const string COLLECTION = "collection";
 
-        public static string GetKey(string name)
-            => $"FILE_{name}".ToUpper();
-
         public static string GetKey(ImportEntityType type)
             => type switch
             {
@@ -25,6 +24,16 @@
                 ImportEntityType.ArtistCollection => ARTIST_COLLECTION,
                 ImportEntityType.CollectionMatch => COLLECTION_MATCH,
                 ImportEntityType.Collection => COLLECTION,
+                _ => throw new System.NotImplementedException()
+            };
+
+        public static string GetKey<T>() where T : new()
+            => new T() switch
+            {
+                Artist => ARTIST,
+                ArtistCollection => ARTIST_COLLECTION,
+                Collection => COLLECTION,
+                CollectionMatch => COLLECTION_MATCH,
                 _ => throw new System.NotImplementedException()
             };
     }

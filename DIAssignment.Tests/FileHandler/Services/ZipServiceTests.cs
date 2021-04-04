@@ -16,11 +16,8 @@ namespace DIAssignment.Tests.FileHandler.Services
 
             var target = service.ExtractZip(path);
             Assert.NotNull(target);
-
-            var file = Path.Combine(target, "file.txt");
-            Assert.True(File.Exists(file));
-
-            var content = await File.ReadAllTextAsync(file);
+            Assert.True(File.Exists(target));
+            var content = await File.ReadAllTextAsync(target);
             Assert.Equal(expected, content);
         }
     }

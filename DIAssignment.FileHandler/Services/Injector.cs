@@ -6,27 +6,13 @@ namespace DIAssignment.FileHandler.Services
     /// <summary>
     /// Manage dependencies
     /// </summary>
-    internal sealed class Injector : IInjector
+    internal sealed class Injector : BaseInjector
     {
-        public Container Container { get; }
-
-        public Injector()
+        protected override void RegisterServices()
         {
-            Container = new Container();
-            RegisterServices();
-        }
-
-        public T Get<T>() where T : class
-            => Container.GetInstance<T>();
-
-        private void RegisterServices()
-        {
-            Container.Register<IConfigService, ConfigService>();
             Container.Register<IGDriveService, GDriveService>();
             Container.Register<IZipService, ZipService>();
             Container.Register<IDbFileReaderService, DbFileReaderService>();
-
-            Container.Verify();
         }
     }
 }

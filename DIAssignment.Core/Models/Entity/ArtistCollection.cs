@@ -1,7 +1,9 @@
 ﻿using DIAssignment.Core.DBFile;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace DIAssignment.Core.Models.Entity
 {
+    [BsonDiscriminator("ArtistCollection")]
     public class ArtistCollection
     {
         [DbFileColumn("artist_id")]

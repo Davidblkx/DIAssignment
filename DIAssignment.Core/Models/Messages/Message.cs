@@ -4,11 +4,14 @@ namespace DIAssignment.Core.Models
 {
     public abstract class Message
     {
-        public Guid ID { get; }
+        public long ID { get; set; }
+        public Guid MessageID { get; set; }
+        public DateTime DateTime { get; set; }
 
         public Message()
         {
-            ID = Guid.NewGuid();
+            MessageID = Guid.NewGuid();
+            DateTime = DateTime.UtcNow;
         }
     }
 }

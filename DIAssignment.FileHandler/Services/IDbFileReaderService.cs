@@ -12,6 +12,14 @@ namespace DIAssignment.FileHandler.Services
         /// <param name="path"></param>
         /// <param name="action"></param>
         /// <returns></returns>
-        Task ReadDbFile(string path, Action<DbFileRow> action);
+        Task ReadDbFileAsync(string path, Action<DbFileRow> action);
+
+        /// <summary>
+        /// Reads the file row and invoke an action for each row
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="action"></param>
+        /// <returns></returns>
+        void ReadDbFile(string path, Action<DbFileRow> action);
     }
 }

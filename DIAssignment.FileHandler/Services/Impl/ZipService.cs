@@ -1,5 +1,6 @@
 ﻿using System.IO.Compression;
 using System.IO;
+using System.Linq;
 
 namespace DIAssignment.FileHandler.Services
 {
@@ -14,7 +15,9 @@ namespace DIAssignment.FileHandler.Services
             zipFile.ExtractToDirectory(target, true);
             stream.Close();
 
-            return target;
+            return new DirectoryInfo(target)
+                .EnumerateFiles()
+                .First().FullName;
         }
     }
 }

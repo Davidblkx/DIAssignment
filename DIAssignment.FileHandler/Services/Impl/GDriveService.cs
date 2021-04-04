@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Net.Http;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace DIAssignment.FileHandler.Services
@@ -9,21 +10,26 @@ namespace DIAssignment.FileHandler.Services
     {
         public async Task<string> DownloadFile(string fileId)
         {
-            using var client = new HttpClient();
-            var stream = await client.GetStreamAsync(BuildUrl(fileId));
-
+            var url = BuildUrl(fileId);
             string fileName = $"local_{fileId}_{Guid.NewGuid()}";
-            var fileStream = File.Create(fileName);
 
-            await stream.CopyToAsync(fileStream, 1024);
-
-            fileStream.Close();
-            stream.Close();
+            await DownloadFile(url, fileName);
 
             return fileName;
         }
 
+        private async Task DownloadFile(string url, string destination)
+        {
+            using var client = new HttpClient();
+            using var stream = await client.GetStreamAsync(url);
+            using var fileStream = File.OpenWrite(destination);
+            await stream.CopyToAsync(fileStream, 1024);
+        }
+
         private static string BuildUrl(string id)
-            => $"https://drive.google.com/uc?id={id}&authuser=0&export=download";
+            => $"https://www.googleapis.com/drive/v3/files/{id}/?key={GetKey()}&alt=media";
+
+        private static string GetKey()
+            => string.Join("", "AIzaS", "yBsfNWa9mN", "SXJMOx3Z-j", "bWugox9qsC8wwo");
     }
 }

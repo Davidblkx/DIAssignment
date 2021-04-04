@@ -17,7 +17,7 @@ namespace DIAssignment.Tests.FileHandler.Services
 
             var subject = new List<DbFileRow>();
 
-            await service.ReadDbFile(file, e => subject.Add(e));
+            await service.ReadDbFileAsync(file, e => subject.Add(e));
 
             Assert.Equal(3, subject.Count);
 
@@ -53,7 +53,7 @@ namespace DIAssignment.Tests.FileHandler.Services
             void Serialize(DbFileRow row) => subject
                 .Add(DbFileRowSerializer.Serialize<ArtistCollection>(row));
 
-            await service.ReadDbFile(file, Serialize);
+            await service.ReadDbFileAsync(file, Serialize);
 
             Assert.Equal(3, subject.Count);
 

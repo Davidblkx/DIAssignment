@@ -47,8 +47,9 @@ namespace DIAssignment.Core.DBFile
             } 
             catch
             {
-                throw new InvalidOperationException(
-                    $"Can't convert {value} for property {prop.Name}");
+                return prop.PropertyType.IsValueType ?
+                    Activator.CreateInstance(prop.PropertyType)
+                    : null;
             }
         }
     }

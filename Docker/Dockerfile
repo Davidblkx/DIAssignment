@@ -16,4 +16,8 @@ EXPOSE 5213
 COPY Docker/entry.sh /entry.sh
 RUN chmod +x /entry.sh
 
+# Create temp directory
+RUN mkdir -p /tempapp
+RUN chmod 777 /tempapp
+
 ENTRYPOINT ["/bin/bash","/entry.sh"]
