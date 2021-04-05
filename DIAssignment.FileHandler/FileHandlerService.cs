@@ -22,6 +22,7 @@ namespace DIAssignment.Core
             EmmitStartMessage();
         }
 
+        // Send messages to start the import process
         private async void EmmitStartMessage()
         {
             await Task.Delay(TimeSpan.FromSeconds(15));

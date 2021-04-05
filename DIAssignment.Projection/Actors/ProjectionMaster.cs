@@ -22,6 +22,8 @@ namespace DIAssignment.Projection.Actors
         {
             _injector = injector;
             Receive<UpsertMessage>(OnEvent);
+
+            // messages from ArtistActor
             Receive<AlbumArtistMessage>(e => GetAlbumActor().Tell(e));
         }
 

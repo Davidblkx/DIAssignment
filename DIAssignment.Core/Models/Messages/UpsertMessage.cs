@@ -6,7 +6,7 @@ using MongoDB.Bson.Serialization.Attributes;
 namespace DIAssignment.Core.Models.Messages
 {
     /// <summary>
-    /// Insert or update an entity values
+    /// Message to insert or update an entity values
     /// </summary>
     public abstract class UpsertMessage : Message, IConsistentHashable
     {

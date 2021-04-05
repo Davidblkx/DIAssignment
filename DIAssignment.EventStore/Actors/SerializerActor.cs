@@ -11,7 +11,7 @@ using static DIAssignment.Core.Models.ImportEntityType;
 namespace DIAssignment.EventStore.Actors
 {
     /// <summary>
-    /// Serializes an entity from a DbFile and sent to storage and to projection
+    /// Serializes an entity from a DbFile and sent to storage and to the projection actor
     /// </summary>
     public class SerializerActor : ReceiveActor
     {
@@ -33,6 +33,7 @@ namespace DIAssignment.EventStore.Actors
             var row = message.EntityRow;
             if (row is null) return;
 
+            // Serializes according to ImportEntityType
             UpsertMessage toInsert = message.Type switch
             {
                 Artist => UpsertArtist.FromRow(row),
@@ -47,6 +48,7 @@ namespace DIAssignment.EventStore.Actors
             UpdateProjection(toInsert);
         }
 
+        // Add it to mongodb
         private void SaveUpsert(UpsertMessage msg)
         {
             if (_mongoActor == ActorRefs.Nobody)
@@ -57,6 +59,7 @@ namespace DIAssignment.EventStore.Actors
             _mongoActor.Tell(msg);
         }
 
+        // Send message to projection actor
         private void UpdateProjection(UpsertMessage msg)
         {
             var target = _cluster.State.Members.First(e => e.HasRole("projection"));

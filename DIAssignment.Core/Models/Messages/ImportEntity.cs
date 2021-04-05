@@ -2,6 +2,9 @@
 
 namespace DIAssignment.Core.Models.Messages
 {
+    /// <summary>
+    /// Message to serialize and process a new entity entry
+    /// </summary>
     public class ImportEntityMessage : Message
     {
         public ImportEntityType Type { get; set; }

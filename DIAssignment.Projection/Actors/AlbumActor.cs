@@ -10,6 +10,7 @@ using System.Linq;
 
 namespace DIAssignment.Projection.Actors
 {
+    // Create or update an album projection 
     public class AlbumActor : ReceiveActor
     {
         private readonly ILoggingAdapter _log = Logging.GetLogger(Context);
@@ -18,7 +19,6 @@ namespace DIAssignment.Projection.Actors
         private readonly Cluster _cluster;
 
         private IActorRef _mongoActor = ActorRefs.Nobody;
-        private IActorRef _esActor = ActorRefs.Nobody;
 
         // last used projection
         private Album _projection = new();
@@ -57,6 +57,8 @@ namespace DIAssignment.Projection.Actors
                 case ArtistCollection a:
                     SearchArtist(a);
                     break;
+
+                default: return;
             }
 
             SaveProjection(_projection);

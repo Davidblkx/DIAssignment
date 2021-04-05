@@ -38,6 +38,10 @@ namespace DIAssignment.Core.DBFile
             return new DbFileRow(_headers, SplitRow(row));
         }
 
+        /// <summary>
+        /// Reads a line and return a <see cref="DbFileRow"/>
+        /// </summary>
+        /// <returns></returns>
         public DbFileRow? ReadRow()
         {
             var row = _reader.ReadLine();

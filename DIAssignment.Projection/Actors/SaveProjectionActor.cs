@@ -6,6 +6,9 @@ using DIAssignment.Projection.Services;
 
 namespace DIAssignment.Projection.Actors
 {
+    /// <summary>
+    /// Saves a album projection to database
+    /// </summary>
     public class SaveProjectionActor : ReceiveActor
     {
         private readonly IMongoService _mongo;

@@ -2,6 +2,10 @@
 
 namespace DIAssignment.Core.Models.Entity
 {
+    /// <summary>
+    /// Projection of a collection and its artists
+    /// Entity to be indexed in elastic
+    /// </summary>
     public class Album : Collection
     {
         public string UPC { get; set; } = "";

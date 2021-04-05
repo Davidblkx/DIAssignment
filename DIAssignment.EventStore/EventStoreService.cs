@@ -17,6 +17,7 @@ namespace DIAssignment.EventStore
 
             ActorSystem.ActorOf(
                 Props.Create<SerializerActor>(injector)
+                // Router to split messages between 50 instances
                 .WithRouter(new RoundRobinPool(50)), ActorNames.Serializer);
         }
     }
