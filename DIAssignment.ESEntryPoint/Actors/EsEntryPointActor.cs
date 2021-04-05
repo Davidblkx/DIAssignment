@@ -20,6 +20,7 @@ namespace DIAssignment.ESEntryPoint.Actors
             _injector = injector;
             _elastic = injector.Get<IElasticService>();
 
+            Receive<IActorRef>(e => _indexAlbum = e);
             AwaitElastic();
         }
 
@@ -29,10 +30,7 @@ namespace DIAssignment.ESEntryPoint.Actors
             {
                 _elastic.EnsureIndex<Album>();
 
-                _indexAlbum = Context.ActorOf(
-                    Props.Create<IndexAlbumActor>(_injector)
-                    .WithRouter(new RoundRobinPool(50)), "indexalbum");
-
+                CreateIndexAlbumActor();
                 Become(ListenForAlbuns);
                 Stash.UnstashAll();
             });
@@ -42,6 +40,14 @@ namespace DIAssignment.ESEntryPoint.Actors
         public void ListenForAlbuns()
         {
             Receive<Album>(e => _indexAlbum.Tell(e));
+        }
+
+        private void CreateIndexAlbumActor()
+        {
+            if (_indexAlbum != ActorRefs.Nobody) return;
+            _indexAlbum = Context.ActorOf(
+                Props.Create<IndexAlbumActor>(_injector)
+                .WithRouter(new RoundRobinPool(50)), "indexalbum");
         }
 
         public class ElasticReady {}

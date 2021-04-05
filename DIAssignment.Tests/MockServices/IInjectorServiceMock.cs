@@ -10,11 +10,11 @@ namespace DIAssignment.Tests.MockServices
         public Mock<IInjector> Mock { get; }
         private readonly IConfigService _config;
 
-        public IInjectorServiceMock(Dictionary<string, string> configValues)
+        public IInjectorServiceMock(Dictionary<string, string> configValues = null)
         {
             Mock = new Mock<IInjector>();
 
-            _config = IConfigServiceMock.Build(configValues);
+            _config = IConfigServiceMock.Build(configValues ?? new Dictionary<string, string>());
             Mock.Setup(x => x.Get<IConfigService>())
                 .Returns(_config);
         }
